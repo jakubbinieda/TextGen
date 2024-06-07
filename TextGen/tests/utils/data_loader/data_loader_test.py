@@ -38,7 +38,6 @@ class LossTest(unittest.TestCase):
     def test_special_characters(self):
         data = DataLoader.load(
             'TextGen/tests/utils/data_loader/special_characters.txt')
-        print(data.word_tokenize())
         self.assertEqual(data.word_tokenize(),
                          ['.',
                           '!',
