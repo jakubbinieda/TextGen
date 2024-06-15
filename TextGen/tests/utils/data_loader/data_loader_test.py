@@ -12,24 +12,24 @@ class LossTest(unittest.TestCase):
             'TextGen/tests/utils/data_loader/krol_karol.txt')
         self.assertEqual(
             data.raw,
-            'Król Karol kupił królowej Karolinie korale koloru koralowego.')
+            'król karol kupił królowej karolinie korale koloru koralowego.')
 
     def test_load_multiline_data(self):
         data = DataLoader.load(
             'TextGen/tests/utils/data_loader/krol_karol_long.txt')
         self.assertEqual(
             data.raw,
-            'Król Karol kupił królowej Karolinie korale koloru koralowego,\nKrólowa Karolina kolory korali królowi Karolowi kontrolowała,\nKiedy król Karol kolekcję korali królowej Karolinie komplementował.')
+            'król karol kupił królowej karolinie korale koloru koralowego,\nkrólowa karolina kolory korali królowi karolowi kontrolowała,\nkiedy król karol kolekcję korali królowej karolinie komplementował.')
 
     def test_word_tokenize(self):
         data = DataLoader.load(
             'TextGen/tests/utils/data_loader/krol_karol.txt')
         self.assertEqual(data.word_tokenize(),
-                         ['Król',
-                          'Karol',
+                         ['król',
+                          'karol',
                           'kupił',
                           'królowej',
-                          'Karolinie',
+                          'karolinie',
                           'korale',
                           'koloru',
                           'koralowego',
@@ -38,7 +38,6 @@ class LossTest(unittest.TestCase):
     def test_special_characters(self):
         data = DataLoader.load(
             'TextGen/tests/utils/data_loader/special_characters.txt')
-        print(data.word_tokenize())
         self.assertEqual(data.word_tokenize(),
                          ['.',
                           '!',
